@@ -18,7 +18,7 @@ public class IndonesianVerticle extends AbstractVerticle {
   }
 
   @Override
-  public void start() throws Exception {
+  public void start() {
     vertx.eventBus().consumer(EB_ADDRESS, message -> {
       String word = message.body().toString();
       logger.debug("Received message: " + word);
@@ -46,7 +46,7 @@ public class IndonesianVerticle extends AbstractVerticle {
                   try {
                     String body = buffer.toString().replace("\n", "");
                     JsonObject jsonBody = new JsonObject(body);
-                    logger.debug("Result of [" + word + "] : " + jsonBody.toString());
+                    logger.debug("Result of [" + word + "] : " + jsonBody);
                     event.complete(true);
                   } catch (Exception e) {
                     event.fail(e);

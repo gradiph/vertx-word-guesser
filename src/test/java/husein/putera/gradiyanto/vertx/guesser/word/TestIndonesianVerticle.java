@@ -18,7 +18,7 @@ class TestIndonesianVerticle {
   }
 
   @Test
-  void verticle_deployed(Vertx vertx, VertxTestContext testContext) throws Throwable {
+  void verticle_deployed(Vertx ignored, VertxTestContext testContext) {
     assertTrue(true);
     testContext.completeNow();
   }

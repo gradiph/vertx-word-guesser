@@ -39,7 +39,7 @@ public class Main {
     Runtime.getRuntime().addShutdownHook(new Thread(this::stop));
     deployVerticles();
     registerConsumer();
-    String input = "";
+    String input;
     while (true) {
       input = receiveInput();
       if (input.equalsIgnoreCase("x")) {
